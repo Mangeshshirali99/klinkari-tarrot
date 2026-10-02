@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f3ed">
+  <meta name="theme-color" content="#08131d">
   <meta name="description" content="Draw a Klinkari reflection card and make a little room for what wants to be seen.">
   <meta property="og:title" content="Klinkari — a quiet tarot reading">
   <meta property="og:description" content="Draw a Klinkari reflection card and make a little room for what wants to be seen.">
@@ -14,13 +14,26 @@
   <title>Klinkari — a quiet tarot reading</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <main class="page-shell">
   <header class="topbar"><a class="wordmark" href="./" aria-label="Klinkari home" style="display:inline-flex;align-items:center;gap:10px"><img src="icon.png" alt="" width="46" height="46" style="object-fit:contain">KLINKARI<span class="wordmark-dot">.</span></a><span class="edition">A PERSONAL TAROT</span></header>
+    <section class="welcome" id="welcome" aria-label="Welcome to Klinkari" hidden>
+      <div class="welcome-card">
+        <span class="eyebrow" id="welcomeStep">WELCOME · 1 OF 3</span>
+        <div class="welcome-emblem" id="welcomeIcon" aria-hidden="true"></div>
+        <p class="welcome-mantra" id="welcomeMantra" lang="hi"></p>
+        <span class="welcome-rule" aria-hidden="true">✦</span>
+        <div class="welcome-controls">
+          <button class="welcome-back" id="welcomeBack" type="button" hidden>BACK</button>
+          <button class="welcome-next" id="welcomeNext" type="button">CONTINUE <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="welcome-dots" id="welcomeDots" aria-label="Welcome screen progress"></div>
+      </div>
+    </section>
     <section class="experience" aria-live="polite">
       <div class="intro" id="intro">
         <span class="eyebrow">A CARD FOR THIS MOMENT</span>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f3ed">
+  <meta name="description" content="Draw a Klinkari reflection card and make a little room for what wants to be seen.">
+  <title>Klinkari — a quiet tarot reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+  <header class="topbar"><a class="wordmark" href="./" aria-label="Klinkari home">KLINKARI<span class="wordmark-dot">.</span></a><span class="edition">A PERSONAL TAROT</span></header>
+    <section class="experience" aria-live="polite">
+      <div class="intro" id="intro">
+        <span class="eyebrow">A CARD FOR THIS MOMENT</span>
+        <h1>Let a card<br>find you.</h1>
+        <p>Draw from the Klinkari deck. Stay with what it brings up.</p>
+      </div>
+      <div class="reading" id="reading" hidden>
+        <div class="card-stage" id="cardStage">
+          <div class="card" id="card" role="img" aria-label="A card waiting to be drawn">
+            <div class="card-back" aria-hidden="true"><span class="back-mark">✳</span><span class="back-caption">KLINKARI</span></div>
+            <div class="card-front"><img id="cardImage" alt=""><span class="image-sheen" aria-hidden="true"></span></div>
+          </div>
+        </div>
+        <div class="card-caption" id="cardCaption" aria-live="polite"><span class="eyebrow">YOUR CARD</span><h2 id="cardName"></h2></div>
+      </div>
+      <button class="draw-button" id="drawButton" type="button"><span id="buttonLabel">DRAW A CARD</span><span class="arrow" aria-hidden="true">↗</span></button>
+      <p class="deck-note" id="deckNote">Ten original cards · one at a time</p>
+    </section>
+    <footer class="footer"><span>Keep what resonates. Let the rest pass.</span><span class="footer-mark">✳</span></footer>
+  </main>
+</body>
+</html>

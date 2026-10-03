@@ -30,6 +30,10 @@ let bag = [];
 let lastIndex = -1;
 let busy = false;
 
+function safePath(fileName) {
+  return `./${encodeURI(fileName)}`;
+}
+
 function refill() {
   bag = cards.map((_, i) => i);
 
@@ -59,7 +63,7 @@ function draw() {
 
   const item = cards[index];
   cardTitle.textContent = item.name;
-  cardImage.src = item.image;
+  cardImage.src = safePath(item.image);
   cardImage.alt = item.name;
 
   const existingMeaning = cardCaption.querySelector(".card-meaning");
@@ -97,7 +101,7 @@ function renderWelcome() {
   welcomeStep.textContent = "WELCOME · " + (welcomeIndex + 1) + " OF " + welcomes.length;
 
   const icon = document.createElement("img");
-  icon.src = item.icon;
+  icon.src = safePath(item.icon);
   icon.alt = item.name;
 
   welcomeIcon.innerHTML = "";

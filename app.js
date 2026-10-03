@@ -111,10 +111,6 @@ function renderWelcome() {
 }
 
 function finishWelcome() {
-  try {
-    localStorage.setItem("klinkari-welcome-v2", "seen");
-  } catch {}
-
   welcome.hidden = true;
   experience.hidden = false;
   button.focus();
@@ -136,14 +132,6 @@ welcomeBack.addEventListener("click", () => {
   }
 });
 
-try {
-  if (localStorage.getItem("klinkari-welcome-v2") !== "seen") {
-    welcome.hidden = false;
-    experience.hidden = true;
-    renderWelcome();
-  }
-} catch {
-  welcome.hidden = false;
-  experience.hidden = true;
-  renderWelcome();
-}
+welcome.hidden = false;
+experience.hidden = true;
+renderWelcome();

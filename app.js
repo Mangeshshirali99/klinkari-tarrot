@@ -24,14 +24,11 @@ const card = document.querySelector("#card");
 const cardImage = document.querySelector("#cardImage");
 const cardTitle = document.querySelector("#cardName");
 const button = document.querySelector("#drawButton");
-const buttonLabel = document.querySelector("#buttonLabel");
 const cardCaption = document.querySelector("#cardCaption");
-const deckNote = document.querySelector("#deckNote");
 
 let bag = [];
 let lastIndex = -1;
 let busy = false;
-let started = false;
 
 function refill() {
   bag = cards.map((_, i) => i);
@@ -48,7 +45,6 @@ function refill() {
 
 function draw() {
   if (busy) return;
-
   busy = true;
   button.disabled = true;
 
@@ -56,7 +52,6 @@ function draw() {
 
   const index = bag.pop();
   lastIndex = index;
-  started = true;
 
   experience.classList.add("has-reading");
   intro.hidden = true;
@@ -75,10 +70,11 @@ function draw() {
   meaning.textContent = item.meaning;
   cardCaption.appendChild(meaning);
 
-  card.classList.add("flipping");
+  card.classList.remove("is-revealed");
+  void card.offsetWidth;
+  card.classList.add("is-revealed");
 
   setTimeout(() => {
-    card.classList.remove("flipping");
     button.disabled = false;
     busy = false;
     button.focus();

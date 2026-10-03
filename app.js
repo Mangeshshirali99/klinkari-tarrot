@@ -93,6 +93,7 @@ const welcomeIcon = document.querySelector("#welcomeIcon");
 const welcomeMantra = document.querySelector("#welcomeMantra");
 const welcomeNext = document.querySelector("#welcomeNext");
 const welcomeBack = document.querySelector("#welcomeBack");
+const welcomeDots = document.querySelector("#welcomeDots");
 
 let welcomeIndex = 0;
 
@@ -108,6 +109,28 @@ function renderWelcome() {
   welcomeIcon.appendChild(icon);
   welcomeMantra.textContent = item.mantra;
   welcomeBack.hidden = welcomeIndex === 0;
+  
+  // Update dots
+  const dots = welcomeDots.querySelectorAll(".welcome-dot");
+  dots.forEach((dot, index) => {
+    if (index === welcomeIndex) {
+      dot.classList.add("is-current");
+    } else {
+      dot.classList.remove("is-current");
+    }
+  });
+}
+
+function renderWelcomeDots() {
+  welcomeDots.innerHTML = "";
+  welcomes.forEach((_, index) => {
+    const dot = document.createElement("div");
+    dot.className = "welcome-dot";
+    if (index === welcomeIndex) {
+      dot.classList.add("is-current");
+    }
+    welcomeDots.appendChild(dot);
+  });
 }
 
 function finishWelcome() {
@@ -134,4 +157,5 @@ welcomeBack.addEventListener("click", () => {
 
 welcome.hidden = false;
 experience.hidden = true;
+renderWelcomeDots();
 renderWelcome();

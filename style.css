@@ -76,8 +76,8 @@ body {
 
 .page-sigil {
   display: block;
-  width: min(120px, 18vw);
-  height: auto;
+  width: 46px;
+  height: 46px;
   margin: 0 auto 18px;
   opacity: 0.86;
   filter: drop-shadow(0 0 18px rgba(215, 166, 74, 0.32));
@@ -398,7 +398,8 @@ body::before {
   }
 
   .page-sigil {
-    width: min(90px, 22vw);
+    width: 36px;
+    height: 36px;
     margin-bottom: 14px;
   }
 }
